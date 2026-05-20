@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> EXPERIMENTACION</title>
+    <link rel="stylesheet" href="sub.css">
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+
+    <h1>EXPERIMENTACION</h1>
+    <p class="subtitulo">tipos de animales donde se experimentan</p>
+
+</header>
+
+<section class="banner">
+    <img src="raton.jpg" alt="ratones">
+</section>
+
+<section class="info">
+
+    <div class="card">
+        <h2> Animales mas usados en los experimentos:</h2>
+
+        <p><strong>Ratones:</strong> se usan porque son pequeños, baratos de mantener y su cuerpo funciona parecido al humano en muchas cosas. Además se reproducen rápido, así que sirven para estudiar enfermedades y medicamentos.</p>
+        <p><strong>Perros:</strong> en algunos laboratorios se usan para estudiar el corazón, medicamentos y efectos tóxicos porque ciertas funciones de su cuerpo se parecen a las humanas.</p>
+        <p><strong>Conejos:</strong> se usan mucho para pruebas de irritación en piel y ojos porque sus ojos son sensibles y permiten ver reacciones químicas fácilmente.</p>
+        <p><strong>Peces:</strong> se usan para estudiar contaminación y efectos químicos en el agua, además de cómo afectan el desarrollo de los seres vivos.</p>
+        <p><strong>Monos:</strong> se usan porque son muy parecidos biológicamente a los humanos. Ayudan en investigaciones complejas como vacunas o enfermedades del cerebro.</p>
+    </div>
+
+    <div class="card">
+        <h2> Productos en los que se usan:</h2>
+
+        <ol>
+            <li>Cosméticos: maquillaje, shampoo, cremas o perfumes se prueban para ver si irritan la piel o los ojos.</li>
+            <li>Medicamentos: se prueban para comprobar si funcionan y si tienen efectos peligrosos.</li>
+            <li>Productos de limpieza: cloro, detergentes o desinfectantes se analizan para medir su toxicidad.</li>
+            <li>Pesticidas y fertilizantes: se estudia si dañan a seres vivos o al medio ambiente.</li>
+            <li>Productos químicos industriales: pinturas, solventes o plásticos se prueban para conocer riesgos de salud.</li>
+        </ol>
+    </div>
+
+</section>
+
+<!-- CARRUSEL -->
+
+<section class="galeria">
+
+    <h2>Imagenes de los animales:</h2>
+
+    <div class="carousel">
+
+        <img id="carousel-img"
+        src="peces.jpg">
+
+    </div>
+
+</section>
+
+<!-- INTERACTIVO -->
+
+<section class="interactivo">
+
+    <h2> Interacciones</h2>
+
+    <button onclick="cambiarColor()">Cambiar Color </button>
+
+    <button onclick="mostrarMensaje()">Dato Curioso </button>
+
+    <button onclick="cambiarImagen()">Cambiar Portada </button>
+
+    <p id="mensaje"></p>
+
+</section>
+
+<!-- PORTADA -->
+
+<section class="portada-extra">
+    <img id="imagenAlbum" src="RATAS.jpg">
+</section>
+
+<footer>
+    <p>NO AL ANIMAL TESTING</p>
+</footer>
+
+<script>
+
+    /* CAMBIAR COLOR */
+
+    function cambiarColor() {
+
+        let colores = [
+            "#111",
+            "#2c003e",
+            "#001f3f",
+            "#3a0000"
+        ];
+
+        let colorRandom =
+            colores[Math.floor(Math.random() * colores.length)];
+
+        document.body.style.background = colorRandom;
+    }
+
+    /* MENSAJES */
+
+    function mostrarMensaje() {
+
+        let mensajes = [
+            "Más del 90% de los animales usados en laboratorios son ratones y ratas.",
+            "Muchos países ya prohibieron pruebas en animales para cosméticos, como la European Union.",
+            "Algunas pruebas químicas pueden durar semanas o meses para observar efectos a largo plazo.",
+            "Existen alternativas modernas como órganos artificiales y simulaciones por computadora para reducir el uso de animales."
+        ];
+
+        let random =
+            mensajes[Math.floor(Math.random() * mensajes.length)];
+
+        document.getElementById("mensaje").textContent = random;
+    }
+
+    /* CAMBIAR PORTADA */
+
+    let imagenes = [
+        "monkey.webp",
+        "pancho.avif",
+        "depilado.webp"
+    ];
+
+    let index = 0;
+
+    function cambiarImagen() {
+
+        index++;
+
+        if(index >= imagenes.length) {
+            index = 0;
+        }
+
+        document.getElementById("imagenAlbum").src = imagenes[index];
+    }
+
+    /* CARRUSEL AUTOMÁTICO */
+
+    let carouselImages = [
+        "tonejo.jpg",
+        "mono.avif",
+        "perro.png",
+        "raton.jpg"
+    ];
+
+    let carouselIndex = 0;
+
+    function cambiarCarrusel() {
+
+        carouselIndex++;
+
+        if(carouselIndex >= carouselImages.length) {
+            carouselIndex = 0;
+        }
+
+        document.getElementById("carousel-img").src =
+            carouselImages[carouselIndex];
+    }
+
+    setInterval(cambiarCarrusel, 3000);
+
+</script>
+
+</body>
+</html>

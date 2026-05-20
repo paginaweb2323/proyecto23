@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> marcas que no experimentan</title>
+    <link rel="stylesheet" href="sub.css">
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+
+    <h1>MARCAS</h1>
+    <p class="subtitulo">MARCAS QUE NO EXPERIMENTAN CON ANIMALES</p>
+
+</header>
+
+<section class="banner">
+    <img src="libre.webp" alt="ratones">
+</section>
+
+<section class="info">
+
+    <div class="card">
+
+    <h2>Marcas libres de crueldad animal (Cruelty Free):</h2>
+
+    <p><strong>e.l.f. Cosmetics:</strong> maquillaje accesible y 100% cruelty free.</p>
+
+    <p><strong>The Body Shop:</strong> cosméticos y cuidado de la piel natural.</p>
+
+    <p><strong>Fenty Beauty:</strong> maquillaje inclusivo creado por Rihanna.</p>
+
+    <p><strong>Rare Beauty:</strong> marca de maquillaje creada por Selena Gomez.</p>
+
+</div>
+</section>
+
+<!-- CARRUSEL -->
+
+<section class="galeria">
+
+    <h2>Imagenes de los animales:</h2>
+
+    <div class="carousel">
+
+        <img id="carousel-img"
+        src="bueno.avif">
+
+    </div>
+
+</section>
+
+<!-- INTERACTIVO -->
+
+<section class="interactivo">
+
+    <h2> Interacciones</h2>
+
+    <button onclick="cambiarColor()">Cambiar Color </button>
+
+    <button onclick="mostrarMensaje()">Dato Curioso </button>
+
+    <button onclick="cambiarImagen()">Cambiar Portada </button>
+
+    <p id="mensaje"></p>
+
+</section>
+
+<!-- PORTADA -->
+
+<section class="portada-extra">
+    <img id="imagenAlbum" src="loreal.jpg">
+</section>
+
+<footer>
+    <p>NO AL ANIMAL TESTING</p>
+</footer>
+
+<script>
+
+    /* CAMBIAR COLOR */
+
+    function cambiarColor() {
+
+        let colores = [
+            "#111",
+            "#2c003e",
+            "#001f3f",
+            "#3a0000"
+        ];
+
+        let colorRandom =
+            colores[Math.floor(Math.random() * colores.length)];
+
+        document.body.style.background = colorRandom;
+    }
+
+    /* MENSAJES */
+
+    function mostrarMensaje() {
+
+        let mensajes = [
+            "e.l.f. Cosmetics: Es una de las marcas más certificadas por PETA y todos sus productos son veganos desde 2021.",
+            "The Body Shop: Fue una de las primeras marcas en hacer campañas globales contra la experimentación en animales desde 1989.",
+            "Fenty Beauty: No vende en países donde es obligatorio probar en animales, manteniendo su política cruelty free.",
+            "Rare Beauty: Además de ser cruelty free, financia proyectos de salud mental a través de su fundación."
+        ];
+
+        let random =
+            mensajes[Math.floor(Math.random() * mensajes.length)];
+
+        document.getElementById("mensaje").textContent = random;
+    }
+
+    /* CAMBIAR PORTADA */
+
+    let imagenes = [
+        "buenas2.jpg",
+        "buenas4.webp",
+        "rare.webp"
+    ];
+
+    let index = 0;
+
+    function cambiarImagen() {
+
+        index++;
+
+        if(index >= imagenes.length) {
+            index = 0;
+        }
+
+        document.getElementById("imagenAlbum").src = imagenes[index];
+    }
+
+    /* CARRUSEL AUTOMÁTICO */
+
+    let carouselImages = [
+        "bueno.avif",
+        "logo.webp",
+        "elf.png",
+        "the body.jpg"
+    ];
+
+    let carouselIndex = 0;
+
+    function cambiarCarrusel() {
+
+        carouselIndex++;
+
+        if(carouselIndex >= carouselImages.length) {
+            carouselIndex = 0;
+        }
+
+        document.getElementById("carousel-img").src =
+            carouselImages[carouselIndex];
+    }
+
+    setInterval(cambiarCarrusel, 3000);
+
+</script>
+
+</body>
+</html>

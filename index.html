@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> Experimentacion animal en la industria quimica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-top">
+        <img src="logo.webp" class="logo">
+
+        <h2> Experimentacion animal en la industria quimica </h2>
+
+        <img src="logo.webp" class="logo">
+    </div>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="expe.html">Experimentacion</a></li>
+
+            <li>
+                <a href="buenas.html">Marcas buenas</a>
+            </li>
+
+            <li>
+                <a href="malas.html">Marcas malas</a>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <h1 id="tituloHero">pulsa para ver imagenes graficas</h1>
+</section>
+
+<div class="container">
+
+    <button onclick="cambiarFondo()" class="btn-cambiar">
+      siguiente imagen
+    </button>
+
+    <h2>¿que es el animal testing?</h2>
+    <p>
+        La experimentación animal en la industria química consiste en usar animales para probar sustancias químicas y verificar si son peligrosas para los seres vivos o el medio ambiente.
+
+Se realizan pruebas para:
+
+Toxicidad (si una sustancia envenena)
+Irritación en piel y ojos
+Riesgo de cáncer
+Efectos en órganos
+Impacto en la reproducción o embarazo,
+
+Muchas veces se usan:
+
+Ratones
+Ratas
+Conejos
+Peces,
+
+Ejemplos de productos químicos evaluados:
+
+Pesticidas
+Limpiadores
+Pinturas
+Fertilizantes
+Productos industriales,
+
+Estas pruebas ayudan a crear normas de seguridad, pero también son muy criticadas por el sufrimiento animal. Por eso hoy existen alternativas como:
+
+Cultivos celulares
+Modelos computacionales
+Órganos artificiales en laboratorio
+
+Algunos países han limitado o prohibido ciertas pruebas, especialmente en cosméticos.
+    </p>
+
+    <h2>ejemplos de animales:</h2>
+    <div class="gallery">
+        <img src="gale1.jpeg">
+        <img src="gif.gif">
+        <img src="gale2.jpg">
+    </div>
+
+    <div class="gif">
+        <h2>consecuencias:</h2>
+        <img src="consecuencias.jpg">
+    </div>
+
+    <h2>VIDEO QUE CAUSO POLEMICA EN 2020:</h2>
+<br>
+
+<video width="600" controls>
+    <source src="ralf.mp4" type="video/mp4">
+    NOT OK.
+</video>
+
+</div>
+
+<footer>
+    <p>NO AL ANIMAL TESTING</p>
+</footer>
+
+<script>
+    let fondos = [
+        "banner.jpg",
+        "banner2.webp",
+        "banner3.jpg",
+    ];
+
+    let titulos = [
+        "ANIMAL TESTING",
+        "NO",
+        "AL",
+    ];
+
+    let index = 0;
+
+    function cambiarFondo() {
+        index++;
+        if (index >= fondos.length) index = 0;
+
+        document.querySelector(".hero").style.backgroundImage = `url(${fondos[index]})`;
+        document.getElementById("tituloHero").textContent = titulos[index];
+    }
+</script>
+
+</body>
+</html>

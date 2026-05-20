@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> marcas que experimentan</title>
+    <link rel="stylesheet" href="sub.css">
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+
+    <h1>MARCAS</h1>
+    <p class="subtitulo">MARCAS QUE EXPERIMENTAN CON ANIMALES</p>
+
+</header>
+
+<section class="banner">
+    <img src="bannerco.jpg" alt="ratones">
+</section>
+
+<section class="info">
+
+    <div class="card">
+        <h2> Animales mas usados en los experimentos:</h2>
+
+        <p><strong>L'Oréal:</strong> cosméticos y cuidado personal.
+Ventas anuales: alrededor de €44 mil millones.</p>
+        <p><strong>Procter & Gamble (P&G):</strong> dueña de Pantene, Gillette, Ariel, etc.
+Ventas anuales: más de 80 mil millones USD.</p>
+        <p><strong>Johnson & Johnson:</strong> medicamentos y productos médicos.
+Ventas anuales: más de 85 mil millones USD.</p>
+        <p><strong>Estée Lauder:</strong> maquillaje y perfumes.
+Ventas anuales: cerca de 15 mil millones USD.</p>
+        <p><strong>Colgate-Palmolive:</strong> pasta dental y productos de higiene.
+Ventas anuales: más de 19 mil millones USD.</p>
+    </div>
+</section>
+
+<!-- CARRUSEL -->
+
+<section class="galeria">
+
+    <h2>Imagenes de los animales:</h2>
+
+    <div class="carousel">
+
+        <img id="carousel-img"
+        src="loreal.png">
+
+    </div>
+
+</section>
+
+<!-- INTERACTIVO -->
+
+<section class="interactivo">
+
+    <h2> Interacciones</h2>
+
+    <button onclick="cambiarColor()">Cambiar Color </button>
+
+    <button onclick="mostrarMensaje()">Dato Curioso </button>
+
+    <button onclick="cambiarImagen()">Cambiar Portada </button>
+
+    <p id="mensaje"></p>
+
+</section>
+
+<!-- PORTADA -->
+
+<section class="portada-extra">
+    <img id="imagenAlbum" src="producrt.avif">
+</section>
+
+<footer>
+    <p>NO AL ANIMAL TESTING</p>
+</footer>
+
+<script>
+
+    /* CAMBIAR COLOR */
+
+    function cambiarColor() {
+
+        let colores = [
+            "#111",
+            "#2c003e",
+            "#001f3f",
+            "#3a0000"
+        ];
+
+        let colorRandom =
+            colores[Math.floor(Math.random() * colores.length)];
+
+        document.body.style.background = colorRandom;
+    }
+
+    /* MENSAJES */
+
+    function mostrarMensaje() {
+
+        let mensajes = [
+            "Algunas empresas gastan millones de dólares al año buscando alternativas para reducir las pruebas en animales.",
+            "Varias marcas famosas venden productos “cruelty free”, pero su empresa matriz sí puede realizar pruebas en otros productos.",
+            "Los ratones de laboratorio son criados específicamente para investigación y algunos tienen modificaciones genéticas para estudiar enfermedades humanas.",
+            "En muchos países ya es ilegal probar maquillaje en animales, pero medicamentos y químicos industriales todavía suelen requerir pruebas de seguridad."
+        ];
+
+        let random =
+            mensajes[Math.floor(Math.random() * mensajes.length)];
+
+        document.getElementById("mensaje").textContent = random;
+    }
+
+    /* CAMBIAR PORTADA */
+
+    let imagenes = [
+        "esters.avif",
+        "loreal.jpg",
+        "galindo.jpg"
+    ];
+
+    let index = 0;
+
+    function cambiarImagen() {
+
+        index++;
+
+        if(index >= imagenes.length) {
+            index = 0;
+        }
+
+        document.getElementById("imagenAlbum").src = imagenes[index];
+    }
+
+    /* CARRUSEL AUTOMÁTICO */
+
+    let carouselImages = [
+        "colgat.jpg",
+        "protect.jpg",
+        "jhonson.png",
+        "ester.jpg"
+    ];
+
+    let carouselIndex = 0;
+
+    function cambiarCarrusel() {
+
+        carouselIndex++;
+
+        if(carouselIndex >= carouselImages.length) {
+            carouselIndex = 0;
+        }
+
+        document.getElementById("carousel-img").src =
+            carouselImages[carouselIndex];
+    }
+
+    setInterval(cambiarCarrusel, 3000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+}
+
+/* MENÚ */
+nav {
+    margin-top: 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu > li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background: #ffffff;
+    color: black;
+    border-radius: 5px;
+}
+
+/* SUBMENÚ */
+.submenu {
+    display: none;
+    position: absolute;
+    background: black;
+    list-style: none;
+    padding: 0;
+    min-width: 150px;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    background: url("main.jpeg") no-repeat center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CONTENIDO */
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* BOTÓN */
+.btn-cambiar {
+    margin: 20px;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cambiar:hover {
+    background: #ffffff;
+}
+
+/* GALERÍA */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* GIF */
+.gif img {
+    width: 300px;
+    margin-top: 10px;
+}
+
+/* VIDEO */
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
